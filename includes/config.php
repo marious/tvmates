@@ -11,7 +11,7 @@
 		default:
 			define('DB_NAME','tvmates');
 			define('DB_USER','root');
-			define('DB_PASSWORD','2634231');
+			define('DB_PASSWORD','password');
 			define('URL_ROOT', 'http://tvmates.dev');
 			define('DB_HOST', 'localhost');
 			define('IS_PROD',false);			
