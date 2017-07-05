@@ -1,0 +1,364 @@
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="site-options">
+					<div class="select-container">
+						<select name="language-selector" id="language-select">
+							<option value="it">Italiano</option>
+							<option value="en">English</option>
+						</select>
+						<span class="select-arrow"><svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="display: block; fill: rgb(72, 72, 72); height: 16px; width: 16px;"><path fill-rule="evenodd" d="M16.291 4.295a1 1 0 1 1 1.414 1.415l-8 7.995a1 1 0 0 1-1.414 0l-8-7.995a1 1 0 1 1 1.414-1.415l7.293 7.29 7.293-7.29z"></path></svg></span>
+					</div>
+
+					<div class="select-container">
+						<select name="currency-selector" id="currency-selector">
+							<option>USD</option>
+							<option>NOK</option>
+						</select>
+						<span class="select-arrow"><svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="display: block; fill: rgb(72, 72, 72); height: 16px; width: 16px;"><path fill-rule="evenodd" d="M16.291 4.295a1 1 0 1 1 1.414 1.415l-8 7.995a1 1 0 0 1-1.414 0l-8-7.995a1 1 0 1 1 1.414-1.415l7.293 7.29 7.293-7.29z"></path></svg></span>
+					</div>
+				</div><!-- ./site-options -->
+			</div>
+			<div class="col-md-8 col-md-push-1">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-4">
+							<div>
+								<h3>Airbnb</h3>
+								<ul>
+									<li><a href="#">Chi siamo</a></li>
+									<li><a href="#">Opportunità di lavoro</a></li>
+									<li><a href="#">Stampa</a></li>
+									<li><a href="#">Condizioni</a></li>
+									<li><a href="#">Aiuto</a></li>
+									<li><a href="#">Diversità e </a></li>
+									<li><a href="#">appartenenza</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div>
+								<h3>Scopri</h3>
+								<ul>
+									<li><a href="#">Affidabilità e </a></li>
+									<li><a href="#">sicurezza</a></li>
+									<li><a href="#">Crediti di viaggio</a></li>
+									<li><a href="#">Gift card</a></li>
+									<li><a href="#">Cittadino di Airbnb</a></li>
+									<li><a href="#">Viaggi di lavoro</a></li>
+									<li><a href="#">Guide</a></li>
+									<li><a href="#">Airbnbmag</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div>
+								<h3>Ospita</h3>
+								<ul>
+									<li><a href="#">Perché affittare</a></li>
+									<li><a href="#">Ospitalità</a></li>
+									<li><a href="#">Ospitare </a></li>
+									<li><a href="#">responsabilmente</a></li>
+									<li><a href="#">Community Center</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="social">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<p>&copy; TVMATES, inc.</p>
+					</div>
+					<div class="col-md-4 col-md-push-5">
+						<ul>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Site Map</a></li>
+							<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+							<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+							<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<!-- Modals -->
+
+{% if session['logged_in'] == false %}
+<!-- loginModal -->
+<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="border: none;">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+
+			<div class="modal-body" style="padding: 20px 32px 20px 32px;">
+
+				<div class="sign-socials">
+
+					<div id="socials-content">
+						<a href="" class="facebook-btn facebookLink btn-block">
+							<i class="ion-social-facebook"></i>
+							<span class="text-content">Accedi con Facebook</span>
+						</a>
+
+						<a href="" class="google-btn googleLink btn-block">
+							<i class="ion-social-googleplus"></i>
+							<span class="text-content">Accedi con Googl</span>
+						</a>
+
+						<div class="signup-or-separator">
+							<span class="h6 signup-or-separator--text">O</span>
+							<hr>
+						</div>
+
+
+						<div class="login-form">
+							<form action="/login.php" method="post" id="login-form">
+
+								<div class="control-group">
+									<input type="text" placeholder="Indirizzo email" id="login-email" name="email">
+									<i class="ion ion-ios-email"></i>
+								</div>
+
+								<div class="control-group">
+									<input type="password" placeholder="Password" id="login-password" name="password">
+									<i class="ion ion-android-lock"></i>
+								</div>
+
+								<div class="remember-forget">
+									<div class="remember">
+										<input type="checkbox" id="remember-me">
+										<label for="remember-me">Remember me</label>
+									</div>
+									<div class="forget-password">
+										<a href="#">Password dimenticata?</a>
+									</div>
+								</div>
+								<br>
+								<div class="sign-with-email">
+									<button type="submit" class="btn-block sign-with-email-btn">Accesso
+									</button>
+								</div>
+							</form>
+						</div>
+
+
+
+
+						<div class="have-account">
+							<p>Non hai un account?</p>
+							<a href="#" class="register-btn">Registrati</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<!-- Register Modal -->
+<div class="modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="border: none;">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+
+			<div class="modal-body" style="padding: 20px 32px 20px 32px;">
+
+				<!-- Signup Using Socials -->
+				<div class="sign-socials">
+
+					<div class="socials-content">
+						<a href="#" class="facebook-btn btn-block">
+							<i class="ion-social-facebook"></i>
+							<span class="text-content">Registrati con Facebook</span>
+						</a>
+
+						<a href="#" class="google-btn btn-block">
+							<i class="ion-social-googleplus"></i>
+							<span class="text-content">Registrati con Google</span>
+						</a>
+
+						<div class="signup-or-separator">
+							<span class="h6 signup-or-separator--text">O</span>
+							<hr>
+						</div>
+
+						<div class="sign-with-email">
+							<a href="#" class="btn-block sign-with-email-btn">
+								<i class="ion-android-mail"></i>
+								Registrati con la tua Email
+							</a>
+						</div>
+
+						<div class="licence-box">
+							<p>
+								Facendo clic su Registrati o Continua con, dischiaro di accettare i
+								<a href="#">Termini del Servizio</a>, i
+								<a href="#">Termini de servizio sui pagamenti</a>, la
+								<a href="#">Informative sulla Privacy</a> e la
+								<a href="#">Politiche di non discriminazione</a> di <strong>TVmates</strong>
+							</p>
+						</div>
+
+
+						<div class="have-account">
+							<p>Hai gia un account Su TVmates?</p>
+							<a href="#" class="login-btn">Accedi</a>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Signup using email -->
+				<!-- Signup using email -->
+				<div class="sign-email">
+					<p class="register-title">Registrati con <a href="#">Facebook</a> o <a href="#">Google</a></p>
+					<div class="signup-or-separator">
+						<span class="h6 signup-or-separator--text">O</span>
+						<hr>
+					</div>
+
+				<form action="register.php" method="post" id="register-form">
+						<div class="sign-form">
+
+								<div class="control-group">
+									<input type="text" placeholder="Indirizzo email" name="email" id="email">
+									<i class="ion ion-ios-email"></i>
+								</div>
+
+								<div class="control-group">
+									<input type="text" placeholder="Nome" name="username" id="username">
+									<i class="ion ion-android-person"></i>
+								</div>
+
+								<div class="control-group">
+									<input type="text" placeholder="Cognome" name="sur_name" id="sur_name">
+									<i class="ion ion-android-person"></i>
+								</div>
+
+								<div class="control-group">
+									<input type="password" placeholder="Password" name="password" id="password">
+									<i class="ion ion-android-lock"></i>
+								</div>
+
+								<div class="birth-info">
+									<h4>Data di nascita</h4>
+									<p>
+										Per registrati devi aver compiuto almeno 18 anni. La data
+										del tuo compleanno non sara visibile per altre persone.
+									</p>
+									<div class="select-boxes">
+										<div class="row">
+											<div class="col-md-5">
+												<div class="select-container">
+													<select name="month" id="month">
+														<option value disabled selected>mese</option>
+														{% set months = ['gennaio', 'febbraio', 'marzo',
+															'aprile', 'maggio', 'giugno', 'luglio',
+															'agosto', 'settembre', 'ottobre', 'novembre',
+																'dicembre'] %}
+														{% for month in months %}
+														<option value="{{ loop.index }}">{{ month | capitalize }}</option>
+														{% endfor %}
+													</select>
+													<span class="select-arrow"><svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="display: block; fill: rgb(72, 72, 72); height: 16px; width: 16px;"><path fill-rule="evenodd" d="M16.291 4.295a1 1 0 1 1 1.414 1.415l-8 7.995a1 1 0 0 1-1.414 0l-8-7.995a1 1 0 1 1 1.414-1.415l7.293 7.29 7.293-7.29z"></path></svg></span>
+												</div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="select-container">
+													<select name="day" id="day">
+														<option vallue disabled selected>Giorno</option>
+														{% for i in range(1, 31) %}
+														<option value="{{ i }}">{{ i }}</option>
+														{% endfor %}
+													</select>
+													<span class="select-arrow"><svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="display: block; fill: rgb(72, 72, 72); height: 16px; width: 16px;"><path fill-rule="evenodd" d="M16.291 4.295a1 1 0 1 1 1.414 1.415l-8 7.995a1 1 0 0 1-1.414 0l-8-7.995a1 1 0 1 1 1.414-1.415l7.293 7.29 7.293-7.29z"></path></svg></span>
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="select-container">
+													<select name="year" id="year">
+														<option value disabled selected>Anno</option>
+
+
+														{% set currentYear = "now"|date("Y") %}
+														{% set minimumYear = currentYear - 100 %}
+
+														{% for year in (currentYear)..minimumYear %}
+															<option value="{{ year }}">{{ year }}</option>
+														{% endfor %}
+
+													</select>
+													<span class="select-arrow"><svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="display: block; fill: rgb(72, 72, 72); height: 16px; width: 16px;"><path fill-rule="evenodd" d="M16.291 4.295a1 1 0 1 1 1.414 1.415l-8 7.995a1 1 0 0 1-1.414 0l-8-7.995a1 1 0 1 1 1.414-1.415l7.293 7.29 7.293-7.29z"></path></svg></span>
+												</div>
+											</div>
+
+										</div>
+									</div><!-- ./select-boxes -->
+
+									<div class="privacy">
+										<input type="checkbox" name="receive_email" id="privacy" value="1" checked>
+										<label for="privacy">
+											Vorrei ricevere coupon, promozioni, sondaggi e
+											aggiornamenti via email su Tvmates e i suoi partner.
+										</label>
+									</div>
+
+								</div>
+						</div>
+
+					<div class="licence-box">
+						<p>
+							Facendo clic su Registrati o Continua con, dischiaro di accettare i
+							<a href="#">Termini del Servizio</a>, i
+							<a href="#">Termini de servizio sui pagamenti</a>, la
+							<a href="#">Informative sulla Privacy</a> e la
+							<a href="#">Politiche di non discriminazione</a> di <strong>TVmates</strong>
+						</p>
+					</div>
+
+					<div class="sign-with-email">
+						<button type="submit" class="btn-block sign-with-email-btn">Registrati</button>
+					</div>
+				</form>
+
+
+					<div class="have-account">
+						<p>Hai gia un account Su TVmates?</p>
+						<a href="" class="login-btn" id="showLoginButton">Accedi</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endif %}
+
+
+{%for file_js in js%}
+	<script src='{{ root }}/js/{{file_js}}.js' async></script>
+{%endfor%}
+
+</body>
+</html>

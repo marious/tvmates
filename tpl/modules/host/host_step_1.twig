@@ -1,0 +1,79 @@
+<section class="main-section host-step-1">
+
+    <div class="container">
+        <div class="row">
+            <form method="post" action="/host-step-1.php" id="host-step-1">
+            <div class="form-wrapper" style="height: 1150px;">
+                <div class="col-md-5">
+                    <h2>1.Indrizzo</h2>
+
+                        <div class="form-scroll">
+                            <div class="form-group">
+                                <label for="address">nome indrizzo</label>
+                                <input type="text" id="address_name" placeholder="ed es. casa" name="address_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Nazione</label>
+                                <div class="select-container">
+                                    <select name="country" id="country">
+                                        <option value="italia">Italia</option>
+                                    </select>
+                                    <span class="select-arrow ion-arrow-down-b"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="street_address">via e numero civico</label>
+                                <input type="text" name="street_address" id="street_address" placeholder="ad es. Via Garibaldi, 90">
+                            </div>
+                            <div class="form-group">
+                                <label for="flat">Appartamento, suite, edificio(opzionale)</label>
+                                <input type="text" name="flat" placeholder="ad es. Int. 21" id="flat">
+                            </div>
+                            <div class="form-group city-info clearfix">
+                                <div>
+                                    <label for="city">Citta</label>
+                                    <input type="text" name="city" id="city" placeholder="ad es. Milano">
+                                </div>
+                                <div>
+                                    <label for="province">Provincia</label>
+                                    <input type="text" name="province" id="province" placeholder="Lombardia">
+                                </div>
+                            </div>
+                            <div class="form-group postal">
+                                <label for="postal_code">CAP</label>
+                                <input type="text" name="postal_code" id="postal_code" placeholder="ad es.20121">
+                            </div>
+                            <div class="form-group">
+                                <label for="address-type">Tipo indrizzo</label>
+                                <div class="select-container">
+                                    <select name="address_type" id="address-type">
+                                        <option value="casa">Casa</option>
+                                    </select>
+                                    <span class="select-arrow ion-arrow-down-b"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="divider"></div>
+                    <div class="form-host-footer">
+                        <a href="" class="back"><i class="ion-ios-arrow-thin-left"></i> Indietro</a>
+                        <button type="submit" class="host-btn">Avanti &nbsp; <i class=""></i></button>
+                    </div>
+                </div><!-- ./col-md-4 -->
+
+            </div>
+            <div class="col-md-6 col-md-push-1 sidebar-wrapper">
+                <div class="hint-wrapper">
+                    <div class="hint-box">
+                        <i class="ion-ios-lightbulb-outline"></i>
+                        <p>
+                            Il tuo indirizzo eastto Sara condivisio solo con gli ospiti confermati
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div><!-- ./ row -->
+    </div><!-- ./container -->
+
+</section>

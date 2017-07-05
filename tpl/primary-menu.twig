@@ -1,0 +1,54 @@
+<header class="primary-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="img/logo.png" alt="Tv mates logo" id="logo">
+            </div>
+            <div class="col-md-6 col-md-push-2">
+                <nav>
+                    <ul>
+                        {% if session['logged_in'] == false %}
+                            <li><a href="/behost.php">Diventa Host</a></li>
+                        {% endif %}
+                        {% if session['logged_in'] == true %}
+                            <li><a href="/behost.php">Host</a></li>
+                            <li><a href="">I miet Eventi</a></li>
+                            <li><a href="">Messaggi</a></li>
+                            <li>
+                                <div class="avatar-container">
+                                    <a href="">
+                                        <div class="avatar-photo">
+                                            {% if session['userData']['picture'] %}
+                                                <img src="{{ session['userData']['picture'] }}" alt="{{ userData['first_name'] }}">
+                                            {% else %}
+                                                <img src="/img/user_pic.png" alt="">
+                                            {% endif %}
+
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                        {% if session['logged_in'] != true %}
+                            <li><a href="" data-toggle="modal" data-target="#registerModal">Registrati</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#loginModal">Accedi</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% if session['logged_in'] == true %}
+    <div class="user-info">
+        <ul>
+            <li><a href=""><div class="content">Edit Profile</div></a></li>
+            <li><a href=""><div class="content">Travel Credit</div></a></li>
+            <li><a href=""><div class="content">My Guidebook</div></a></li>
+            <li><a href=""><div class="content">Business Travel</div></a></li>
+            <li><a href="logout.php"><div class="content">Log Out</div></a></li>
+        </ul>
+    </div>
+{% endif %}

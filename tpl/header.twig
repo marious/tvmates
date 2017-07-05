@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="IT">
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link href="" rel="publisher">
+		<title>TVMates</title>
+
+		<link rel="alternate" hreflang="" href="" />
+
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:description" content="">
+		<meta name="twitter:creator" content="">
+		<meta name="format-detection" content="telephone=no">
+
+		<meta property="og:title" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+
+		<meta itemprop="name" content="">
+		<meta itemprop="description" content="">
+
+		<meta property="fb:app_id" content="" />
+
+
+
+		{%if img_seo%}
+			<meta property="og:image" content="{{ img_seo }}">
+			<meta itemprop="image" content="{{ img_seo }}">
+		{%endif%}
+
+		{%for file_css in css%}
+			<link href="{{root }}/css/{{file_css}}.css" rel="stylesheet">
+		{%endfor%}
+
+		<script>
+			root = '{{ root }}';
+		</script>
+
+		{#ICONS#}
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ root }}/ico/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="{{ root }}/ico/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ root }}/ico/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ root }}/ico/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ root }}/ico/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ root }}/ico/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ root }}/ico/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ root }}/ico/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ root }}/ico/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="{{ root }}/ico/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ root }}/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="{{ root }}/ico/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ root }}/ico/favicon-16x16.png">
+		<link rel="manifest" href="{{ root }}/ico/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+
+	</head>
+	<body>
+

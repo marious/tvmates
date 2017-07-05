@@ -1,0 +1,69 @@
+# For boolean values, use php_flag followed by the name
+# of the configuration directive and on or off.
+
+php_flag session.use_cookies on
+php_flag session.use_only_cookies on
+php_flag session.use_trans_sid off
+
+# Comment out the following line for PHP < 5.5.2
+php_flag session.use_strict_mode on
+
+# For non-boolean values, use php_value followed by the
+# name of the directive and the value. Set the value to
+# none to clear the value set in php.ini or httpd.conf.
+# Enclose path names and values that contain punctuation
+# in quotes.
+
+php_value session.name TVMates
+php_value session.cache_limiter nocache
+
+# Cookie settings
+#php_value session.cookie_domain ''
+#php_value session.cookie_path '/persistent'
+php_value session.cookie_lifetime 0
+php_flag session.cookie_httponly on
+#php_flag session.cookie_secure off      #for production server set it to on if using https
+
+php_value session.gc_maxlifetime 1440
+php_value session.gc_probability 1
+php_value session.gc_divisor 100
+
+RewriteEngine On
+
+
+## WITHOUT PARAMS
+RewriteRule ^IT/?$ 					index.php?lang=IT 												[L]
+
+## WITH PARAMS
+RewriteRule ^IT/services/([^/].+)/?$ 	services.php?lang=IT&service=$1								[L]
+
+
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+RewriteRule .* ? [F,L]
+
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+ 
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+</IfModule>
+
+
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+Header set x-xss-protection "1; mode=block"
+Header unset X-Powered-By
+Header unset Server
+
+ServerSignature Off

@@ -1,0 +1,53 @@
+<header class="secondary-header">
+    <!--<div class="container">-->
+    <div class="row">
+        <div class="col-md-2">
+            <div class="logo-container" style="border-right: none;">
+                <img src="img/logo.png" alt="TVmates logo" id="logo">
+            </div>
+        </div>
+        <div class="col-md-5 col-md-push-6">
+            <nav>
+                <ul>
+                    {% if session['logged_in'] != true %}
+                        <li><a href="" data-toggle="modal" data-target="#registerModal">Registrati</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#loginModal">Accedi</a></li>
+                    {% endif %}
+                    {% if session['logged_in'] == true %}
+                        <li>
+                            <a href="behost.php">Host</a>
+                        </li>
+                        <li>
+                            <a href="">Messages</a>
+                        </li>
+                        <li>
+                            <a href="">Help</a>
+                        </li>
+                        <li>
+                            <div class="avatar-container">
+                                <a href="#">
+                                    <div class="avatar-photo">
+                                        <img src="img/user_pic.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--</div>-->
+</header>
+
+<div class="user-info user-info-2">
+    <ul>
+        <li><a href=""><div class="content">Edit Profile</div></a></li>
+        <li><a href=""><div class="content">Travel Credit</div></a></li>
+        <li><a href=""><div class="content">My Guidebook</div></a></li>
+        <li><a href=""><div class="content">Business Travel</div></a></li>
+        <li><a href="logout.php"><div class="content">Log Out</div></a></li>
+    </ul>
+</div>
+
+<div class="clearfix"></div>
